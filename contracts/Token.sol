@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.26;
 
 // ERC20 Interface
 interface IERC20 {
@@ -61,8 +61,8 @@ contract SimpleERC20Token is IERC20 {
     }
 
     // Checks the allowance for a given spender on behalf of the owner
-    function allowance(address owner, address spender) external view override returns (uint256) {
-        return allowances[owner][spender];
+    function allowance(address tokenOwner, address spender) external view override returns (uint256) {
+        return allowances[tokenOwner][spender];
     }
 
     // Approves a spender to spend a specified amount on behalf of the message sender
